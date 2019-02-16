@@ -23,14 +23,14 @@ Event.create!(
 	duration: 5 * rand(1..120),
 	price: rand(1..1000),
 	location: Faker::OnePiece.location,
-	administrator: User.all.sample
+	admin: User.all.sample
 	)
 end
 
 3.times do
 Attendance.create!(
-	attendee: User.all.sample, 
+	user: User.all.sample, 
 	event: Event.all.sample,
-	stripe_customer_id: Faker::Number.number(10)
+	# stripe_customer_id: Faker::Number.number(10)
 	)
 end
