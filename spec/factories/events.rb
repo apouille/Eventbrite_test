@@ -6,5 +6,6 @@ FactoryBot.define do
     description { Faker::Lorem.paragraph(2) }
     price { rand(1..1000) }
     location { Faker::Address.full_address }
+    admin { FactoryBot.create(:user)}
   end
 end

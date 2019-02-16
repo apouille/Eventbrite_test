@@ -1,4 +1,8 @@
 class Event < ApplicationRecord
+	belongs_to :admin, class_name: "User"
+	has_many :attendances
+	has_many :users, through: :attendances
+	
 	validates_with EventValidator, on: :create
 
 	validates :start_date, presence: true
